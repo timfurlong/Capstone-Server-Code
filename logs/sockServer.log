@@ -51,3 +51,18 @@ DEBUG -- Connected by ('172.23.192.12', 55220)
 INFO -- outputFiles/Nov13_2012 11_13_36.jpg written successfully
 DEBUG -- Connected by ('172.23.192.12', 42410)
 INFO -- outputFiles/Nov13_2012 11_27_21.jpg written successfully
+DEBUG -- Connected by ('172.23.198.159', 51588)
+INFO -- outputFiles/Nov25_2012 21_55_04.jpg written successfully
+DEBUG -- Connected by ('172.23.198.159', 51604)
+DEBUG -- Connected by ('172.23.198.159', 51629)
+DEBUG -- ['[1, 2, 3]', '']
+DEBUG -- Connected by ('172.23.198.159', 51634)
+DEBUG -- [1, 2, 3]
+DEBUG -- Connected by ('172.23.192.92', 4097)
+DEBUG -- GET /search?q=arduino HTTP/1.1
+Host:www.google.com
+Connection: close
+
+
+DEBUG -- Connected by ('127.0.0.1', 65199)
+DEBUG -- [1, 2, 3]

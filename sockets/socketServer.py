@@ -11,6 +11,7 @@ from Logger import Logger
 class sockServer:
 
 	HOST = ''     # Symbolic name meaning all available interfaces
+	# HOST = '172.23.198.159'
 	PORT = 5000  # Arbitrary non-privileged port
 	OUTPUT_DIR = 'outputFiles'
 	OUTPUT_EXT = 'jpg'
@@ -70,6 +71,11 @@ class sockServer:
 		fp.close()
 		self.log('%s written successfully' % outputFilePath, debug=False)
 
+	def recieveArray(self):
+		line = self.conn.recv(512)
+		self.log(line, debug=True)
+		self.conn.close()
+		exit()
 
 if __name__ == '__main__':
 	debug = False
@@ -77,4 +83,4 @@ if __name__ == '__main__':
 		debug = True
 	print 'DEBUG MODE = %s' % debug
 	server = sockServer()
-	server.recieveOne()
+	server.recieveArray()

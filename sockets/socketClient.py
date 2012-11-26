@@ -3,7 +3,9 @@ import socket
 import sys
 
 class sockClient:
-	HOST = socket.gethostbyname(socket.gethostname())    # The remote host    daring.cwi.nl
+	# The remote host    daring.cwi.nl
+	# HOST = socket.gethostbyname(socket.gethostname())
+	HOST = "youngmoneycachemoneybillionaires.com"
 	PORT = 5000              # The same port as used by the server
 	sock = None
 
@@ -40,7 +42,19 @@ class sockClient:
 		img.close()
 		self.sock.close()
 
+	def sendNumArray(self, array):
+		done = False
+		while not done:
+			line = str(array)
+			if not line:
+				break
+			self.sock.send( line )
+			done = True
+		self.sock.close()
+
 if __name__ == '__main__':
 	imgName = 'sky.jpg'
 	client = sockClient()
-	client.sendImgStr(imgName=imgName)
+	a = [1,2,3]
+	# client.sendImgStr(imgName=imgName)
+	client.sendNumArray( a )
