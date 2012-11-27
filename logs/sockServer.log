@@ -313,3 +313,147 @@ DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('17
 DEBUG -- Connected by ('172.23.197.239', 56928)
 DEBUG -- 2 lines received
 DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('172.23.197.239', 5000)
+DEBUG -- Connected by ('172.23.197.239', 61341)
+DEBUG -- [1, 2, 3]
+DEBUG -- Connected by ('172.23.199.22', 50062)
+DEBUG -- [1, 2, 3]
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.199.22', 50284)
+DEBUG -- [1, 2, 3]
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- GET /search?q=arduino HTTP/1.1
+Host:www.google.com
+Connection: close
+
+
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- 2 lines received
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.194.110', 4098)
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Connected by ('172.23.194.75', 35748)
+DEBUG -- ˇÿˇ·w4Exif  II*         í       ö              ™       ≤   (       1    ∫   2    ∆          iá    ⁄   %à    ≤  ƒ  SAMSUNG SCH-I535        H      H      I535VRALHE  2012:11:26 21:38:27  öÇ    Ù  ùÇ    ¸  "à       'à    »    ê    0220ê      ê      ë     í    ,  í
+    4  í    <  
+í    D  |í B   R   †    0100†       †       †    ¿  †    î  ¢       £       §        §         §    L      
+DEBUG -- Connected by ('172.23.194.75', 35751)
+INFO -- outputFiles/Nov26_2012 21_40_09.jpg written successfully
+DEBUG -- Connected by ('172.23.194.75', 35754)
+INFO -- outputFiles/Nov26_2012 21_41_08.jpg written successfully
+DEBUG -- 780 lines received
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('172.23.197.239', 5000)
+DEBUG -- Connected by ('172.23.197.239', 50066)
+INFO -- outputFiles/Nov26_2012 21_42_13.jpg written successfully
+DEBUG -- 72 lines received
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('172.23.197.239', 5000)
+DEBUG -- Connected by ('172.23.197.239', 50067)
+INFO -- outputFiles/Nov26_2012 21_43_33.jpg written successfully
+DEBUG -- 193 lines received
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('172.23.197.239', 5000)
+DEBUG -- Connected by ('172.23.197.239', 50068)
+INFO -- outputFiles/Nov26_2012 21_43_33.jpg written successfully
+DEBUG -- 314 lines received
+DEBUG -- Connected by ('172.23.194.110', 4097)
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('172.23.197.239', 5000)
+DEBUG -- Connected by ('172.23.197.239', 50075)
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('172.23.197.239', 5000)
+INFO -- outputFiles/Nov26_2012 21_45_25.jpg written successfully
+DEBUG -- 71 lines received
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('172.23.197.239', 5000)
+DEBUG -- Connected by ('172.23.197.239', 50077)
+INFO -- outputFiles/Nov26_2012 21_46_24.jpg written successfully
+DEBUG -- 143 lines received
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('172.23.197.239', 5000)
+DEBUG -- Connected by ('172.23.197.239', 50079)
+INFO -- outputFiles/Nov26_2012 21_46_36.jpg written successfully
+DEBUG -- 288 lines received
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('172.23.197.239', 5000)
+DEBUG -- Connected by ('172.23.197.239', 50081)
+INFO -- outputFiles/Nov26_2012 21_46_46.jpg written successfully
+DEBUG -- 141 lines received
+DEBUG -- Connected by ('172.23.194.75', 35768)
+DEBUG -- 786 lines received
+DEBUG -- Connected by ('172.23.194.75', 35769)
+DEBUG -- 765 lines received
+DEBUG -- Connected by ('172.23.194.75', 35771)
+DEBUG -- 642 lines received
+DEBUG -- Connected by ('172.23.194.75', 35775)
+DEBUG -- 820 lines received
+DEBUG -- Connected by ('172.23.194.75', 35777)
+DEBUG -- Connected by ('172.23.194.75', 35783)
+DEBUG -- Connected by ('172.23.194.75', 35784)
+INFO -- outputFiles/Nov26_2012 22_05_56.jpg written successfully
+DEBUG -- 676 lines received
+DEBUG -- Connected by ('172.23.194.75', 35785)
+INFO -- outputFiles/Nov26_2012 22_06_04.jpg written successfully
+DEBUG -- 1400 lines received
+DEBUG -- Connected by ('172.23.194.75', 35786)
+INFO -- outputFiles/Nov26_2012 22_06_16.jpg written successfully
+DEBUG -- 2126 lines received
+DEBUG -- Connected by ('172.23.194.75', 35787)
+INFO -- outputFiles/Nov26_2012 22_06_23.jpg written successfully
+DEBUG -- 2763 lines received
+DEBUG -- Connected by ('172.23.194.75', 35788)
+INFO -- outputFiles/Nov26_2012 22_06_33.jpg written successfully
+DEBUG -- 3539 lines received
+DEBUG -- Connected by ('172.23.194.75', 35833)
+INFO -- outputFiles/Nov26_2012 22_29_54.jpg written successfully
+DEBUG -- 1 images received
+DEBUG -- Connected by ('172.23.194.75', 35834)
+INFO -- outputFiles/Nov26_2012 22_30_04.jpg written successfully
+DEBUG -- 2 images received
+DEBUG -- Connected by ('172.23.194.75', 35835)
+INFO -- outputFiles/Nov26_2012 22_30_14.jpg written successfully
+DEBUG -- 3 images received
+DEBUG -- Connected by ('172.23.194.75', 35836)
+INFO -- outputFiles/Nov26_2012 22_30_24.jpg written successfully
+DEBUG -- 4 images received
+DEBUG -- Connected by ('172.23.194.75', 35838)
+INFO -- outputFiles/Nov26_2012 22_33_07.jpg written successfully
+DEBUG -- 1 images received
+DEBUG -- Connected by ('172.23.194.75', 35839)
+INFO -- outputFiles/Nov26_2012 22_33_17.jpg written successfully
+DEBUG -- 2 images received
+DEBUG -- Connected by ('172.23.194.75', 35840)
+INFO -- outputFiles/Nov26_2012 22_33_27.jpg written successfully
+DEBUG -- 3 images received
+DEBUG -- Connected by ('172.23.194.75', 35841)
+DEBUG -- Connected by ('172.23.194.75', 35843)
+INFO -- outputFiles/Nov26_2012 22_34_14.jpg written successfully
+DEBUG -- 1 images received
+DEBUG -- Connected by ('172.23.194.75', 35844)
+INFO -- outputFiles/Nov26_2012 22_34_23.jpg written successfully
+DEBUG -- 2 images received
+DEBUG -- Connected by ('172.23.194.75', 35845)
+INFO -- outputFiles/Nov26_2012 22_34_33.jpg written successfully
+DEBUG -- 3 images received
+DEBUG -- Connected by ('172.23.194.75', 35846)
+DEBUG -- Connected by ('172.23.194.75', 35858)
+INFO -- outputFiles/Nov26_2012 22_39_28.jpg written successfully
+DEBUG -- 1 images received
+DEBUG -- Connected by ('172.23.194.75', 35859)
+INFO -- outputFiles/Nov26_2012 22_39_39.jpg written successfully
+DEBUG -- 2 images received
+DEBUG -- Connected by ('172.23.194.75', 35860)
+INFO -- outputFiles/Nov26_2012 22_39_47.jpg written successfully
+DEBUG -- 3 images received
+DEBUG -- Recived all images for this period
+DEBUG -- Connected by ('172.23.194.75', 35942)
+INFO -- outputFiles/Nov26_2012 22_47_26.jpg written successfully
+DEBUG -- 1 images received
+DEBUG -- Connected by ('172.23.194.75', 35943)
+INFO -- outputFiles/Nov26_2012 22_47_33.jpg written successfully
+DEBUG -- 2 images received
+DEBUG -- Connected by ('172.23.194.75', 35944)
+INFO -- outputFiles/Nov26_2012 22_47_43.jpg written successfully
+DEBUG -- 3 images received
+DEBUG -- Recived all images for this period

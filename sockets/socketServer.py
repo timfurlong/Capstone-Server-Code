@@ -6,11 +6,11 @@ import os
 import time
 
 sys.path.append('..')
+sys.path.append('../Matlab')
 from Logger import Logger
+from config import config
+from MatlabPython import call_mosaic
 
-l = [ '',
-		'',
-		]
 class sockServer:
 
 	HOST = ''     # Symbolic name meaning all available interfaces
@@ -23,10 +23,10 @@ class sockServer:
 		self.logger = Logger(logFile = 'sockServer', useStdOut=True)
 		self.log    = self.logger.log
 		self.debug  = debug
-		self.runSocket()
 
 	def runSocket(self):
 		self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+		self.sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 		self.sock.bind((self.HOST, self.PORT))
 		self.sock.listen(1)
 		self.conn, self.addr = self.sock.accept()
@@ -34,6 +34,7 @@ class sockServer:
 		self.log( 'Connected by %s' % (self.addr,), debug=True)
 
 	def recieveOne(self):
+		self.runSocket()
 		lines = []
 		first = True
 		while 1:
@@ -49,10 +50,12 @@ class sockServer:
 		self.conn.close()
 		exit()
 
-	def recieveMany(self, numImgs = 2):
+	def recieveMany(self):
 		lines = []
 		first = True
-		while 1:
+		numImgs = 0
+		while numImgs<config['num_sensors']:
+			self.runSocket()
 			while 1:
 				line = self.conn.recv(512)
 				if first:
@@ -62,13 +65,12 @@ class sockServer:
 					break
 				lines.append(line)
 			self.saveImg(lines)
+			numImgs += 1
 			print 'Total time taken = %f' % (time.time()-tic)
-			if len(lines) == 1:
-				self.log(lines[0], debug=True)
-			else:
-				self.log('%d lines received' % len(lines), debug=True)
+			self.log('%d images received' % numImgs, debug=True)
 			self.conn.close()
-			self.runSocket()
+		self.log('Recived all images for this period', debug=True)
+		call_mosaic()
 
 	def saveImg(self, dataLines):
 		now    = datetime.datetime.now()
@@ -82,6 +84,7 @@ class sockServer:
 		self.log('%s written successfully' % outputFilePath, debug=False)
 
 	def recieveArray(self):
+		self.runSocket()
 		line = self.conn.recv(512)
 		self.log(line, debug=True)
 		self.conn.close()
@@ -90,15 +93,20 @@ class sockServer:
 	def keepRecievingStrs(self):
 		lines = []
 		while 1:
-			while 1:
-				line = self.conn.recv(512)
-				if not line:
-					break
-				lines.append(line)
+			self.runSocket()
+			try:
+				while 1:
+					line = self.conn.recv(512)
+					if not line:
+						break
+					lines.append(line)
+			except socket.error, e:
+				print e
 			if len(lines) == 1:
 				self.log(lines[0], debug=True)
 			else:
 				self.log('%d lines received' % len(lines), debug=True)
+				# print lines[:50]
 			self.conn.close()
 			self.runSocket()
 
@@ -107,7 +115,9 @@ if __name__ == '__main__':
 	if 'debug' in sys.argv:
 		debug = True
 	print 'DEBUG MODE = %s' % debug
-	server = sockServer()
-	server.keepRecievingStrs()
+	server = sockServer(debug=debug)
+	# server.keepRecievingStrs()
+	# server.recieveArray()
 	# server.recieveOne()
-	# server.recieveMany()
+	server.recieveMany()
+

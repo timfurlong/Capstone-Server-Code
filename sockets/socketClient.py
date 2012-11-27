@@ -41,14 +41,16 @@ class sockClient:
 			print 'could not open socket'
 			sys.exit(1)
 
-	def sendImgStr(self, imgName = None):
-		img = open(imgName, 'r')
-		while 1:
-			line = img.readline(512)
-			if not line:
-				break
-			self.sock.send( line )
-		img.close()
+	def sendImgStr(self, imgName = None, numrep=1):
+		while numrep>0:
+			img = open(imgName, 'r')
+			while 1:
+				line = img.readline(512)
+				if not line:
+					break
+				self.sock.send( line )
+			img.close()
+			numrep -= 1
 		self.sock.close()
 
 	def sendNumArray(self, array):
@@ -65,7 +67,8 @@ if __name__ == '__main__':
 	imgName = 'sky.jpg'
 	client = sockClient()
 	a = [1,2,3]
+	client.sendImgStr(imgName=imgName, numrep=2)
+	# client.runSocket()
 	# client.sendImgStr(imgName=imgName)
-	# client.sendImgStr(imgName=imgName)
-	client.sendNumArray( a )
+	# client.sendNumArray( a )
 	# client.sendNumArray( a )
