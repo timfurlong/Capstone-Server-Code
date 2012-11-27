@@ -5,7 +5,7 @@ import sys
 class sockClient:
 	# The remote host    daring.cwi.nl
 	# HOST = socket.gethostbyname(socket.gethostname())
-	HOST = "youngmoneycachemoneybillionaires.com"
+	HOST = "172.23.197.239"
 	PORT = 5000              # The same port as used by the server
 	sock = None
 
