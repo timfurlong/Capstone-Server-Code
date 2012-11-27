@@ -3,7 +3,7 @@ import os
 class Logger:
 	logFile     = None
 	logDir      = 'logs'
-	SERVER_ROOT  = '/Users/timfurlong/Google Drive/Programming/Capstone/'
+	SERVER_ROOT  = '/Users/cole_d/Capstone-Server-Code-master/'
 
 	def __init__(self, logFile=None, useStdOut=True):
 		self.useStdOut   = useStdOut
