@@ -2,16 +2,25 @@
 import socket
 import sys
 
+sys.path.append('..')
+from Logger import Logger
+
 class sockClient:
 	# The remote host    daring.cwi.nl
-	# HOST = socket.gethostbyname(socket.gethostname())
-	HOST = "youngmoneycachemoneybillionaires.com"
+	HOST = socket.gethostbyname(socket.gethostname())
+	# HOST = "youngmoneycachemoneybillionaires.com"
 	PORT = 5000              # The same port as used by the server
 	sock = None
 
-	def __init__(self):
+	def __init__(self, debug=False):
+		self.debug = debug
+		self.logger = Logger(logFile = 'sockServer', useStdOut=True)
+		self.log    = self.logger.log
+		self.runSocket()
+	def runSocket(self):
 		for res in socket.getaddrinfo(self.HOST, self.PORT,
 									socket.AF_UNSPEC, socket.SOCK_STREAM):
+			self.log('''Client address info: af=%s, socktype=%s,socktype=%s,proto=%s, canonname=%s''' % res, debug=True)
 			af, socktype, proto, canonname, sa = res
 			try:
 				self.sock = socket.socket(af, socktype, proto)
@@ -57,4 +66,6 @@ if __name__ == '__main__':
 	client = sockClient()
 	a = [1,2,3]
 	# client.sendImgStr(imgName=imgName)
+	# client.sendImgStr(imgName=imgName)
 	client.sendNumArray( a )
+	# client.sendNumArray( a )

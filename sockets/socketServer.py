@@ -8,10 +8,13 @@ import time
 sys.path.append('..')
 from Logger import Logger
 
+l = [ '',
+		'',
+		]
 class sockServer:
 
 	HOST = ''     # Symbolic name meaning all available interfaces
-	# HOST = '172.23.198.159'
+	# HOST = '172.23.198.147'
 	PORT = 5000  # Arbitrary non-privileged port
 	OUTPUT_DIR = 'outputFiles'
 	OUTPUT_EXT = 'jpg'
@@ -20,7 +23,9 @@ class sockServer:
 		self.logger = Logger(logFile = 'sockServer', useStdOut=True)
 		self.log    = self.logger.log
 		self.debug  = debug
+		self.runSocket()
 
+	def runSocket(self):
 		self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 		self.sock.bind((self.HOST, self.PORT))
 		self.sock.listen(1)
@@ -48,17 +53,22 @@ class sockServer:
 		lines = []
 		first = True
 		while 1:
-			line = self.conn.recv(512)
-			if first:
-				tic = time.time()
-				first = False
-			lines.append( line )
-			if not line:
-				break
-		self.saveImg(lines)
-		print 'Total time taken = %f' % (time.time()-tic)
-		self.conn.close()
-		exit()
+			while 1:
+				line = self.conn.recv(512)
+				if first:
+					tic = time.time()
+					first = False
+				if not line:
+					break
+				lines.append(line)
+			self.saveImg(lines)
+			print 'Total time taken = %f' % (time.time()-tic)
+			if len(lines) == 1:
+				self.log(lines[0], debug=True)
+			else:
+				self.log('%d lines received' % len(lines), debug=True)
+			self.conn.close()
+			self.runSocket()
 
 	def saveImg(self, dataLines):
 		now    = datetime.datetime.now()
@@ -77,10 +87,27 @@ class sockServer:
 		self.conn.close()
 		exit()
 
+	def keepRecievingStrs(self):
+		lines = []
+		while 1:
+			while 1:
+				line = self.conn.recv(512)
+				if not line:
+					break
+				lines.append(line)
+			if len(lines) == 1:
+				self.log(lines[0], debug=True)
+			else:
+				self.log('%d lines received' % len(lines), debug=True)
+			self.conn.close()
+			self.runSocket()
+
 if __name__ == '__main__':
 	debug = False
 	if 'debug' in sys.argv:
 		debug = True
 	print 'DEBUG MODE = %s' % debug
 	server = sockServer()
-	server.recieveArray()
+	server.keepRecievingStrs()
+	# server.recieveOne()
+	# server.recieveMany()
