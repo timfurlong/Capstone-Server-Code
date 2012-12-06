@@ -3,7 +3,7 @@ import os
 class Logger:
 	logFile     = None
 	logDir      = 'logs'
-	SERVER_ROOT  = os.path.abspath( '.' )
+	SERVER_ROOT  = os.path.abspath('.')
 
 	def __init__(self, logFile=None, useStdOut=True):
 		self.useStdOut   = useStdOut

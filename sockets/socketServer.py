@@ -3,6 +3,7 @@ import socket
 import datetime
 import sys
 import os
+import shutil
 import time
 
 sys.path.append('..')
@@ -55,8 +56,14 @@ class sockServer:
 		lines = []
 		first = True
 		numImgs = 0
+
+		shutil.rmtree(self.OUTPUT_DIR)
+		if not os.path.isdir(self.OUTPUT_DIR):
+		 	os.mkdir(self.OUTPUT_DIR)
+
 		while numImgs<config['num_sensors']:
 			self.runSocket()
+			lines = []
 			while 1:
 				line = self.conn.recv( self.BUFF_SIZE )
 				if first:
@@ -72,6 +79,7 @@ class sockServer:
 			self.log('%d images received' % numImgs, debug=True)
 			self.conn.close()
 		self.log('Recived all images for this period', debug=True)
+		
 		call_mosaic()
 
 	def reciveFileName(self):
