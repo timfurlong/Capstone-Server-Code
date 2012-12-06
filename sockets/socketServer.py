@@ -13,9 +13,10 @@ from MatlabPython import call_mosaic
 
 class sockServer:
 
-	HOST = ''     # Symbolic name meaning all available interfaces
-	# HOST = '172.23.198.147'
-	PORT = 5000  # Arbitrary non-privileged port
+	HOST       = ''     # Symbolic name meaning all available interfaces
+	# HOST     = '172.23.198.147'
+	PORT       = 5000  # Arbitrary non-privileged port
+	BUFF_SIZE  = 512
 	OUTPUT_DIR = 'outputFiles'
 	OUTPUT_EXT = 'jpg'
 
@@ -38,7 +39,7 @@ class sockServer:
 		lines = []
 		first = True
 		while 1:
-			line = self.conn.recv(512)
+			line = self.conn.recv( self.BUFF_SIZE )
 			if first:
 				tic = time.time()
 				first = False
@@ -57,7 +58,7 @@ class sockServer:
 		while numImgs<config['num_sensors']:
 			self.runSocket()
 			while 1:
-				line = self.conn.recv(512)
+				line = self.conn.recv( self.BUFF_SIZE )
 				if first:
 					tic = time.time()
 					first = False
@@ -67,10 +68,15 @@ class sockServer:
 			self.saveImg(lines)
 			numImgs += 1
 			print 'Total time taken = %f' % (time.time()-tic)
+			first = True
 			self.log('%d images received' % numImgs, debug=True)
 			self.conn.close()
 		self.log('Recived all images for this period', debug=True)
 		call_mosaic()
+
+	def reciveFileName(self):
+	   filename = self.conn.recv( self.BUFF_SIZE )
+	   return filename
 
 	def saveImg(self, dataLines):
 		now    = datetime.datetime.now()
@@ -85,7 +91,7 @@ class sockServer:
 
 	def recieveArray(self):
 		self.runSocket()
-		line = self.conn.recv(512)
+		line = self.conn.recv( self.BUFF_SIZE )
 		self.log(line, debug=True)
 		self.conn.close()
 		exit()
@@ -96,7 +102,7 @@ class sockServer:
 			self.runSocket()
 			try:
 				while 1:
-					line = self.conn.recv(512)
+					line = self.conn.recv( self.BUFF_SIZE )
 					if not line:
 						break
 					lines.append(line)
