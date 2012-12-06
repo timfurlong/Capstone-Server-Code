@@ -1,5 +1,5 @@
 function mosaic = display_mosaic(dirImages, outDir, display)
-
+tic;
 if nargin == 0
     ERROR = 'Please input images'
     return
@@ -20,6 +20,6 @@ end
 
 % Write the new mosaic image to the output file
 imwrite(mosaic, outDir) ;
-
+toc
 
 end
