@@ -6,8 +6,8 @@ import os
 import shutil
 import time
 
-sys.path.append('..')
-sys.path.append('../Matlab')
+sys.path.append('.')
+sys.path.append('./Matlab')
 from Logger import Logger
 from config import config
 from MatlabPython import call_mosaic
@@ -25,6 +25,8 @@ class sockServer:
 		self.logger = Logger(logFile = 'sockServer', useStdOut=True)
 		self.log    = self.logger.log
 		self.debug  = debug
+		if not os.path.isdir(self.OUTPUT_DIR):
+		 	os.mkdir(self.OUTPUT_DIR)
 
 	def runSocket(self):
 		self.sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -79,7 +81,7 @@ class sockServer:
 			self.log('%d images received' % numImgs, debug=True)
 			self.conn.close()
 		self.log('Recived all images for this period', debug=True)
-		
+
 		call_mosaic()
 
 	def reciveFileName(self):

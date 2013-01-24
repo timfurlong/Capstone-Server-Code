@@ -563,3 +563,16 @@ DEBUG -- Connected by ('172.23.197.187', 57046)
 INFO -- outputFiles/Nov28_2012 16_19_45.jpg written successfully
 DEBUG -- 3 images received
 DEBUG -- Recived all images for this period
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('192.168.33.129', 5000)
+DEBUG -- Connected by ('192.168.33.129', 54424)
+INFO -- outputFiles/Dec28_2012 16_44_42.jpg written successfully
+DEBUG -- 1 images received
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('192.168.33.129', 5000)
+DEBUG -- Connected by ('192.168.33.129', 54427)
+INFO -- outputFiles/Dec28_2012 16_45_38.jpg written successfully
+DEBUG -- 2 images received
+DEBUG -- Client address info: af=2, socktype=1,socktype=6,proto=, canonname=('192.168.33.129', 5000)
+DEBUG -- Connected by ('192.168.33.129', 54428)
+INFO -- outputFiles/Dec28_2012 16_45_42.jpg written successfully
+DEBUG -- 3 images received
+DEBUG -- Recived all images for this period

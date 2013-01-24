@@ -3,7 +3,8 @@ import os
 class Logger:
 	logFile     = None
 	logDir      = 'logs'
-	SERVER_ROOT  = os.path.abspath( '.' )
+	# SERVER_ROOT  = os.path.abspath( 'Capstone' )
+	SERVER_ROOT = os.getcwd()
 
 	def __init__(self, logFile=None, useStdOut=True):
 		self.useStdOut   = useStdOut
@@ -15,6 +16,8 @@ class Logger:
 				self.logFile     = '%s.log' % logFile
 			else:
 				self.logFile = logFile
+			if not os.path.isdir( self.logDir ):
+				os.mkdir( self.logDir )
 			self.logPath = os.path.join(self.SERVER_ROOT, self.logDir, self.logFile)
 
 	def log(self, msg, debug=False):

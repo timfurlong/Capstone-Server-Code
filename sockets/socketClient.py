@@ -2,7 +2,7 @@
 import socket
 import sys
 
-sys.path.append('..')
+sys.path.append('.')
 from Logger import Logger
 
 class sockClient:
@@ -64,7 +64,7 @@ class sockClient:
 		self.sock.close()
 
 if __name__ == '__main__':
-	imgName = 'sky.jpg'
+	imgName = 'sockets/sky.jpg'
 	client = sockClient()
 	a = [1,2,3]
 	client.sendImgStr(imgName=imgName, numrep=2)
